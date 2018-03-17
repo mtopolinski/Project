@@ -7,4 +7,17 @@ router.get('/', function(req, res, next) {
     res.send('Hello, please enter username and password to login:\n');
 });
 
+
+
+
+router.post('/', function (req, res, next) {
+  		if (req.body.Username === 'matt' && req.body.Password === 'password') {
+         			res.redirect('/listMovies');
+         		} else {
+         			res.redirect('/login');
+         		}
+
+         		});
+
+
 module.exports = router;

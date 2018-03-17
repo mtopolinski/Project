@@ -5,8 +5,11 @@ var movie = require('../controllers/controller.js');
 // Create a new Movie
 router.post('/list/:id/movies/', movie.create);
 
-// Get all Movies matching ID
+// Get all Movies matching Username
 router.get('/list/users/:Username/movies', movie.findUsername);
+
+// Get all Movies matching Email
+router.get('/list/users/:Email/movies', movie.findEmail);
 
 // Get all Movies matching ID
 router.get('/list/:id/movies', movie.findUser);
