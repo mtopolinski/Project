@@ -39,12 +39,28 @@ exports.findUser = function(req, res) {
 exports.findUsername = function(req, res) {
     // Retrieve Movies matching Username
     Movie.find(req.params.Username, function(err, data) {
-
+        console.log('searching for a user in the DB by username');
         console.log(err, data);
 
         if(err) {
             res.status(500).send({message: "Could not find matching Username " + req.params.Username});
         } else {
+            console.log('found your user!');
+            res.json(data);
+        }
+    });
+};
+
+exports.findEmail = function(req, res) {
+    // Retrieve Movies matching Username
+    Movie.find(req.params.Email, function(err, data) {
+        console.log('searching for a user in the DB by email');
+        console.log(err, data);
+
+        if(err) {
+            res.status(500).send({message: "Could not find matching Email " + req.params.Email});
+        } else {
+            console.log('found your user!');
             res.json(data);
         }
     });
