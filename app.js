@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 require('./app_api/models/db.model.js');
 
 var users = require('./routes/users');
+var findUsers = require('./app_api/routes/findUsers');
 var listMovies = require('./app_api/routes/listMovies');
 var editMovies = require('./app_api/routes/editMovies');
 var addMovies = require('./app_api/routes/addMovies');
@@ -54,6 +55,7 @@ app.use('/listMovies', listMovies);
 app.use('/editMovies', editMovies);
 app.use('/addMovies', addMovies);
 app.use('/login', login);
+app.use('/findUsers', findUsers);
 app.use('/api', routesApi);
 
 
