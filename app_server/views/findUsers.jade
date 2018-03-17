@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    body
+    .row.page-header
+        .col-lg-12
+            h1 Find a User
+            h3 Locate a User based on Username or Email:
+    .row
+        .col-xs-12.col-md-6
+            form.form-horizontal(action="", method="post", role="form")
+                .form-group
+                    label.col-sm-2.control-label(for="Username") Username
+                    .col-sm-10
+                        input#username.form-control(name="Username")
+                button.btn.btn-default.pull-right Search
+                | <br /><br />
+                | <br /><br />
+                .form-group
+                    label.col-sm-2.control-label(for="Email") Email
+                    .col-sm-10
+                        input#email.form-control(name="Email")
+                button.btn.btn-default.pull-right Search

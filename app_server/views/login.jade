@@ -5,7 +5,7 @@ block content
         .navbar.navbar-default.navbar-fixed-top
             .container
                 .navbar-header
-                    a.navbar-brand(href='/') Site Navigation
+                    a.navbar-brand Site Navigation
                     button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
                         span.icon-bar
                         span.icon-bar
@@ -13,22 +13,21 @@ block content
                 #navbar-main.navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li
-                            a(href='/listMovies/') List Your Movies
-                        li
-                            a(href='/editMovies/') Edit Your Movies
+                            a(href='/login/') Login Page
     .row.page-header
         .col-lg-12
             h1 Movie Watchlist Authentication Page
             h3 Hello, please enter username and password to login:
+
     .row
         .col-xs-12.col-md-6
-            .form-group
-                label.col-xs-10.col-sm-2.control-label(for="username") Username:
-                    input#username.form-control(username="username")
-                    | <br /><br/>
-                 label.col-xs-10.col-sm-2.control-label(for="password") Password:
-                    input#password.form-control(password="password")
-            | <br /><br />
-            a(href='/listMovies'): button.btn.btn-default.pull-right(type="button") Submit
-            | <br /><br />
-        .col-xs-12.col-md-4
+            form.form-horizontal(action="", method="post", role="form")
+                .form-group
+                    label.col-sm-2.control-label(for="Username") Username
+                    .col-sm-10
+                        input#Username.form-control(name="Username")
+                .form-group
+                    label.col-sm-2.control-label(for="Password") Password
+                    .col-sm-10
+                        input#Password.form-control(name="Password")
+                button.btn.btn-default.pull-right Submit
