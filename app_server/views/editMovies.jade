@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .row.page-header
+        .col-lg-12
+            h1 Movie Watchlist
+            h3 To update Movies, please enter your data below:
+
+    .row
+        .col-xs-12.col-md-6
+            form.form-horizontal(action="", method="put", role="form")
+                .form-group
+                    label.col-sm-2.control-label(for="title") Title
+                    .col-sm-10
+                        input#title.form-control(name="title")
+                .form-group
+                    label.col-sm-2.control-label(for="contents") Contents
+                    .col-sm-10
+                        input#contents.form-control(name="contents")
+                button.btn.btn-default.pull-right Update
+footer
+    .row
+        .col-xs-12
+            small &copy; CIS 385

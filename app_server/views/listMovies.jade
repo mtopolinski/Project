@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    body
+        .navbar.navbar-default.navbar-fixed-top
+            .container
+                .navbar-header
+                    a.navbar-brand Site Navigation
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                #navbar-main.navbar-collapse.collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/login/') Login Page
+                        li
+                            a(href='/editMovies/') Edit Movies
+    .row.page-header
+        .col-lg-12
+            h1 Movie Watchlist
+            h3 The following are all available Movies:
+    .row
+        .col-xs-12.col-md-6
+        p
+
+            ul
+                for listObject in movie
+                    li= 'Username: '+listObject.Username
+                    li= 'Password: **********'
+                    li= 'Email: '+listObject.Email
+                    li= 'Titles: '+listObject.Movies.Titles
+                    a(href='/editMovies/'+listObject._id+'/movies/'+listObject.Movies.Titles): button.btn.btn-default.pull-left(type="button") Edit these Movies
+                else
+                    li no objects
+
+
+
+
+
+    .row
+        .col-xs-12.col-md-6
+            .form-group
+                | <br /><br />
+                | <br /><br />
+            a(href='/addMovies'): button.btn.btn-default.pull-left(type="button") Add a New Movie
+        .col-xs-12.col-md-4
+            | <br /><br />
