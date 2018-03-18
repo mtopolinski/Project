@@ -18,7 +18,7 @@ mongoose.connection.once('open', function() {
     console.log("Successfully connected to the database");
 });
 
-var MovieSchema = mongoose.Schema({
+var MovieSchema = new mongoose.Schema({
     Username: String,
     Password: String,
     Movies: {
