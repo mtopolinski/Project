@@ -28,8 +28,24 @@ router.post('/', function (req, res, next) {
 
             }
             else {
+                path = 'http://localhost:3000/api/list/'+userId+'/movies';
+                const requestOptions = {
+                    url : path,
+                    method : 'GET',
+                    json : {}
+                };
 
-                res.redirect('http://localhost:3000/api/list/' + userId + '/movies');
+                request(
+                    requestOptions,
+                    (function (err, response, body) {
+
+                        console.log(body);
+
+                        res.render('listMovies', { title: 'listMovies', movie: body});
+                    })
+                );
+
+
             }
 
         })
